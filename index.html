@@ -7,13 +7,73 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="crossorigin="anonymous"
-      />
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
       @font-face {
         font-family: "Font1";
         src: url(/FontsFree-Net-Lulo-Clean-W01-One-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Material Icons";
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+        src: local("Material Icons"), local("MaterialIcons-Regular"),
+          url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+          url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+          url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+      }
+      @keyframes SlideIn {
+        0% {
+          opacity: 0; /*初期状態では透明に*/
+          transform: translateX(64px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .material-icons {
+        font-family: "Material Icons";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px; /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: "liga";
+      }
+      button {
+        border: 0;
+        outline: none;
+      }
+      h1 {
+        color: white;
+      }
+      p {
+        color: white;
+        font-family: "Noto Sans JP", sans-serif;
       }
       body {
         background-size: cover;
@@ -23,17 +83,19 @@
         font-family: Font1;
         background-image: url("https://images.unsplash.com/photo-1506442754696-918b372285d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
       }
+
       header {
         width: 100%;
         height: 100px;
         background-color: white;
         display: flex;
         justify-content: space-between;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); 
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
       }
-      .logo{
-          height: 100px;
-          padding: 0 30px;
+      .logo {
+        height: 50px;
+        padding: 0 30px;
+        margin: 15px;
       }
       header a {
         text-decoration: none;
@@ -41,87 +103,200 @@
         padding: 10px;
       }
 
-      a:hover{
-        color: #1C81E6;
+      a:hover {
+        background-position: -100% 0;
+  color: #02A1D1;
       }
-      .now-page{
-        color: #1C81E6;
+      .now-page {
+        color: #02A1D1;
       }
-      header nav{
-        padding: 40px;
-      }
-      h1{
-        color: white;
-      }
-      p{
-        color: white;
-        font-family: 'Noto Sans JP', sans-serif;
-      }
-      .title{
-        margin-top: 20vh;
+
+      .title {
+        margin-top: 23vh;
         margin-left: 10vw;
       }
-      .title h1{
-        font-size: 50px;
-        line-height: 5rem;
+      .title h1 {
+        font-size: 70px;
+        line-height: 80px;
       }
-      .title p{
+      .title p {
         font-size: 25px;
-        margin-top: 20px;
+        margin-top: 25px;
+        letter-spacing: 3px;
       }
       footer {
         width: 100%;
         height: 40px;
-        background-color: #000000;
+        background-color: #161212;
         position: absolute;
         bottom: 0;
+      }
+      .footer-item {
         display: flex;
         justify-content: space-between;
+        margin-left: 50px;
       }
-      footer p{
+      footer p {
         color: #a6acaf;
         font-family: Font1;
         padding-left: 20px;
-        padding-top: 10px;
-        font-size: 12px;
-        text-align:center
+        padding-top: 13px;
+        font-size: 10px;
       }
-      footer nav{
+      footer nav {
         margin: 0 30px;
-        margin-top: 10px;
+        margin-top: 8px;
       }
-      footer a{
+      footer a {
         text-decoration: none;
-        color: #A6ACAF;
-        font-size: 14px;
-        margin: 0px 6px;
+        color: #a6acaf;
+        font-size: 12px;
+        padding: 0px 7px;
       }
-      footer a:hover{
-        color: #ECF0F1 ;
+      footer a:hover {
+        color: #ecf0f1;
+      }
+      .pc-nav {
+        padding: 40px;
+      }
+      .pc-nav ul {
+        display: flex;
+      }
+      .mobile-nav {
+        display: none;
+      }
+
+      .btn-menu {
+        display: none;
+      }
+      /*メニュー*/
+
+      a {
+        white-space: nowrap;
+      }
+
+      .btn-menu {
+        border: 1px solid #999;
+        background: transparent;
+        color: black;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 2px;
+        border: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+      }
+      .mobile-nav {
+        background: #114456;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        overflow-x: hidden;
+        text-align: center;
+        width: 0px;
+        transition: 0.5s;
+        height: calc(100% - 100px);
+        top: 100px;
+      }
+      .mobile-nav ul {
+        margin-top: 20vh;
+      }
+      .mobile-nav li {
+        margin: 50px 0;
+        animation: SlideIn 2.6s;
+      }
+      .mobile-nav.open-menu {
+        width: 100%;
+        border: 0;
+      }
+      .mobile-nav a{
+        color: white;
+      }
+      .mobile-nav a:hover{
+        color: black;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .logo {
+          margin-left: 0;
+        }
+        .title h1 {
+          font-size: 40px;
+          line-height: 70px;
+        }
+        .title p{
+          margin-top: 15px;
+          font-size: 18px;
+        } 
+        .pc-nav {
+          display: none;
+        }
+        .mobile-nav {
+          display: block;
+        }
+        .btn-menu {
+          display: block;
+        }
+        footer {
+          display: block;
+          height: 60px;
+        }
+        .footer-item {
+          display: block;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+        footer nav {
+          margin: 8px 20px;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <img class="logo" src="/logo.svg" />
-      <nav>
-        <a class="now-page" href="">HOME</a>
-        <a href="">ABOUT</a>
-        <a href="">PRODUCT</a>
-        <a href="https://gmail.com">CONTACT US</a>
+      <a href="#"><img class="logo" src="/logo.svg" /></a>
+      <nav class="pc-nav">
+        <ul>
+          <li><a class="now-page" href="">HOME</a></li>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">PRODUCT</a></li>
+          <li><a href="https://gmail.com">CONTACT US</a></li>
+        </ul>
+      </nav>
+      <button class="btn-menu"><i class="material-icons md-48">menu</i></button>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PRODUCT</a></li>
+          <li><a href="#">CONTACT US</a></li>
+        </ul>
       </nav>
     </header>
     <div class="title">
-      <h1>WELCOM<br>To<br>BRAIN MAP</h1>
+      <h1>WELCOM<br />To<br />BRAIN MAP</h1>
       <p>Individual is limitness</p>
     </div>
     <footer>
-      <p>© ALL RIGHTS RESERVED BY BRIND MAP</p>
-      <nav>
-        <a href="">利用規約</a>
-        <a href="">プラバシーポリシー</a>
-        <a href="">特定商取引法に基づく表記</a>
-      </nav>
+      <div class="footer-item">
+        <nav>
+          <a href="">利用規約</a>
+          <a href="">プラバシーポリシー</a>
+          <a href="">特定商取引法に基づく表記</a>
+        </nav>
+        <p>© ALL RIGHTS RESERVED BY BRIND MAP</p>
+      </div>
     </footer>
+    <script>
+      const btn = document.querySelector(".btn-menu");
+      const nav = document.querySelector(".mobile-nav");
+
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open-menu");
+      });
+    </script>
   </body>
 </html>
